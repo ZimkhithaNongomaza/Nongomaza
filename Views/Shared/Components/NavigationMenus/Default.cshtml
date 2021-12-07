@@ -1,0 +1,32 @@
+﻿@model IEnumerable<string>
+
+
+
+
+
+@foreach (string role in Model)
+{
+<li>
+    <a class="nav-link text-white" asp-area="" asp-action="List"
+       asp-controller="Participant"
+       asp-route-role="@role"
+       asp-route-participantPage="1">
+        <b style=" font-family: Georgia, serif;">@role</b>
+    </a>
+</li>
+    
+
+
+}
+<li>
+    <a class="nav-link text-white"
+       asp-action="List"
+       asp-controller="Programme"
+       asp-route-category="">
+        <b style=" font-family: Georgia, serif;">Programme</b> 
+    </a>
+
+</li>
+ 
+
+

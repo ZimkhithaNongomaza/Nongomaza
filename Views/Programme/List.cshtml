@@ -1,0 +1,76 @@
+﻿@using Nongomaza.Models.ViewModels
+@model programmesListViewModel
+
+@foreach (var p in Model.Programmes)
+
+
+{
+    if (@p.Name == "TODDLER")
+
+    {
+        <div class="card card-outline-primary m-1 p-1 @*bg-info*@" style="background-color: deepskyblue">
+            <div class="bg-faded p-1">
+                <h3  style=" font-family: Georgia, serif;">
+                    @p.Name
+
+
+                </h3>
+                <span class="badge badge-pill " style="float:right">
+                    <img src="~/Content/Images/baby-boy.png" />
+                </span>
+                <h4  style=" font-family: Georgia, serif;">@p.AgeCategory </h4>
+                <h4  style=" font-family: Georgia, serif;"><div class="card-text p-1">@p.Description</div></h4>
+
+
+            </div>
+
+
+
+        </div>
+    }
+    else if (@p.Name == "PRE-PRIMARY")
+    { <div class="card card-outline-primary m-1 p-1 @*bg-info*@"  style="background-color: deepskyblue">
+            <div class="bg-faded p-1">
+                <h3  style=" font-family: Georgia, serif;">
+                    @p.Name
+
+                </h3>
+                <span class="badge badge-pill " style="float:right">
+                    <img src="~/Content/Images/playtime.png" />
+                </span>
+                <h4  style=" font-family: Georgia, serif;">@p.AgeCategory </h4>
+                <h4  style=" font-family: Georgia, serif;"><div class="card-text p-1">@p.Description</div></h4>
+
+
+            </div>
+
+
+
+        </div>
+    }
+    else if (@p.Name == "EARLY PRE SCHOOL")
+    { <div class="card card-outline-primary m-1 p-1 @*bg-info*@"  style="background-color: deepskyblue">
+            <div class="bg-faded p-1">
+                <h3 style=" font-family: Georgia, serif;">
+                    @p.Name
+
+                </h3>
+                <span class="badge badge-pill " style="float:right">
+                    <img src="~/Content/Images/children.png" />
+                </span>
+                <h4  style=" font-family: Georgia, serif;">@p.AgeCategory </h4>
+                <h4  style=" font-family: Georgia, serif;"><div class="card-text p-1">@p.Description</div></h4>
+
+
+            </div>
+
+
+
+        </div>
+    }
+
+}
+<div page-model="@Model.PagingInfo" page-action="List" page-classes-enabled="true"
+     page-class="btn" page-class-normal="btn-secondary"
+     page-class-selected="btn-primary" class="btn-group pull-right m-1">
+</div>

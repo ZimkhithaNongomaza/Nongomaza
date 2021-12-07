@@ -1,0 +1,46 @@
+﻿@model Participant
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="ParticipantID" />
+    <div class="form-group ">
+        <label asp-for="Name"></label>
+        <div><span asp-validation-for="Name" class="text-danger"></span></div>
+        <input asp-for="Name" class="form-control border-info" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Surname"></label>
+        <div><span asp-validation-for="Surname" class="text-danger"></span></div>
+        <input asp-for="Surname" class="form-control border-info" ></>
+    </div>
+    <div class="form-group">
+        <label asp-for="Address"></label>
+        <div><span asp-validation-for="Address" class="text-danger"></span></div>
+        <input asp-for="Address" class="form-control border-info" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Email"></label>
+        @*<div><span asp-validation-for="Email" class="text-danger"></span></div>*@
+        <input asp-for="Email" class="form-control border-info" />
+    </div>
+    <div class="form-group" >
+        <label asp-for="CellNumber"></label>
+        <div><span asp-validation-for="CellNumber" class="text-danger"></span></div>
+        <input asp-for="CellNumber" class="form-control border-info" />
+    </div>
+    @*<div class="form-group">
+            <label asp-for="Role"></label>
+            <div><span asp-validation-for="Role" class="text-danger"></span></div>
+            <input asp-for="Role" class="form-control" />
+        </div>*@
+
+    <select asp-for="Role" class=" dropdown btn btn-outline-info dropdown-toggle" type="button" aria-expanded="false">
+        <option value="Teacher">Teacher</option>
+        <option value="Pupil">Pupil</option>
+        
+    </select>
+
+    <div class="text-center">
+        <button class="btn @*btn-primary*@" type="submit" style="background-color:deepskyblue">Save</button>
+        <a asp-action="Index" class="btn @*btn-secondary*@" style="background-color: #e83e8c">Cancel</a>
+    </div>
+</form>    

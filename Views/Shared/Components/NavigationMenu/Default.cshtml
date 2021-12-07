@@ -1,0 +1,58 @@
+﻿@model IEnumerable<string>
+<div> </div>
+@*@foreach (string role in Model)
+       {
+         <a class="btn btn-block
+    @(role == ViewBag.SelectedCategory ? "btn-primary": "btn-secondary")"
+              asp-action="List"
+              asp-controller="Participant"
+              asp-route-role="@role"
+              asp-route-participantPage="1">
+               @role
+           </a>
+       }*@
+<a class="btn btn-block @*btn-primary*@ " style="background-color: deepskyblue"
+   asp-action="Index"
+   asp-controller="EditParticipant"
+   asp-route-category="">
+    <img src="~/Content/Images/add.png" />
+
+    <b style=" font-family: Georgia, serif;"> PARTICIPANT</b>
+
+</a>
+
+
+
+<a class="btn btn-block @*btn-primary*@" style="background-color: #6f42c1"
+   asp-action="Index"
+   asp-controller="EditProgramme"
+   asp-route-category="">
+    <img src="~/Content/Images/ap.png" />
+    <b style=" font-family: Georgia, serif;"> PROGRAMME</b>
+</a>
+
+@*<a class="btn btn-block btn-secondary"
+       asp-action="List"
+       asp-controller="Programme"
+       asp-route-category="">
+        Programme
+    </a>*@
+<a class="btn btn-block @*btn-primary*@" style="background-color: #e83e8c"
+   asp-action="Index"
+   asp-controller="Appointment"
+   asp-route-category="">
+    <img src="~/Content/Images/appointment.png" />
+    <b style=" font-family: Georgia, serif;"> APPOINTMENT</b>
+</a>
+<a class="btn btn-block @*btn-primary*@ " style="background-color: deepskyblue"
+   asp-action="Login"
+   asp-controller="Account"
+   asp-route-category="">
+    <img src="~/Content/Images/logout.png" />
+
+    <b style=" font-family: Georgia, serif;"> LOG-OUT</b>
+
+</a>
+
+
+

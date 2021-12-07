@@ -1,0 +1,58 @@
+﻿@using Nongomaza.Models.ViewModels;
+@model participantsListViewModel
+
+@foreach (var p in Model.Participants)
+{
+    if (@p.Role == "Teacher")
+    {
+        <div class="card card-outline-primary m-1 p-1" style=" background-color: #e83e8c " >
+            <div class="bg-faded p-1">
+                <h4  style=" font-family: Georgia, serif;">
+                    @p.Name @p.Surname
+
+
+                </h4>
+                <span class="badge badge-pill " style="float:right">
+                    <img src="~/Content/Images/teachers.png" />
+                </span>
+                <div>@p.Address</div>
+                <div>@p.Email</div>
+                <div>@p.CellNumber</div>
+                @p.Role
+            </div>
+
+
+
+
+        </div>
+    }
+    else if (p.Role == "Pupil")
+    {
+        <div class="card card-outline-primary m-1 p-1" style=" background-color: #6f42c1 ">
+            <div class="bg-faded p-1">
+                <h4  style=" font-family: Georgia, serif;">
+                    @p.Name @p.Surname
+
+
+                </h4>
+                <span class="badge badge-pill " style="float:right">
+                    <img src="~/Content/Images/kids.png" />
+                </span>
+                <div>@p.Address</div>
+                <div>@p.Email</div>
+                <div>@p.CellNumber</div>
+                @p.Role
+            </div>
+
+
+
+
+        </div>
+    }
+
+}
+<div page-model="@Model.PagingInfo" page-action="List" page-classes-enabled="true"
+     page-class="btn" page-class-normal="btn-secondary"
+     page-class-selected="btn-primary" page-url-role="@Model.CurrentRole"
+     class="btn-group pull-right m-1">
+</div>

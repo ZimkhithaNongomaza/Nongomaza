@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Programme>
+<table class="table table-striped table-bordered table-sm  col-auto">
+    <tr>
+
+        <th>Name</th>
+        <th>Age </th>
+        <th>Description</th>
+       
+        <th>Actions</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+<tr class="col-auto">
+
+    <td class="col-auto" >@item.Name</td>
+    <td class="col-auto">@item.AgeCategory</td>
+    <td class="col-auto">@item.Description</td>
+   
+    <td class="text-center col-auto">
+        <form asp-action="Delete" method="post" class="col-auto">
+            <a asp-action="Edit" class="btn btn-sm @*btn-warning*@ col-auto" style="background-color: deepskyblue"
+               asp-route-programmeId="@item.ProgrammeID">
+                Edit
+            </a>
+            <input type="hidden" name="ProgrammeID" value="@item.ProgrammeID" />
+            <button type="submit" class="btn @*btn-danger*@ btn-sm col-auto" style="background-color: #e83e8c">
+                Delete
+            </button>
+        </form>
+    </td>
+</tr>
+    }
+</table>
+<div class="text-center">
+    <a asp-action="Create" class="btn @*btn-primary*@" style="background-color: #6f42c1">Add Programme</a>
+    </div>

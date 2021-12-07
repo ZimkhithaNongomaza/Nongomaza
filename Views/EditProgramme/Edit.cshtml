@@ -1,0 +1,26 @@
+﻿@model Programme
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="ProgrammeID" />
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <div><span asp-validation-for="Name" class="text-danger"></span></div>
+        <input asp-for="Name" class="form-control border-info" />
+    </div>
+    <div class="form-group">
+        <label asp-for="AgeCategory"> Age</label>
+        <div><span asp-validation-for="AgeCategory" class="text-danger"></span></div>
+        <input asp-for="AgeCategory" class="form-control border-info"></>
+    </div>
+    <div class="form-group">
+        <label asp-for="Description"></label>
+        <div><span asp-validation-for="Description" class="text-danger"></span></div>
+        <input asp-for="Description" class="form-control border-info" />
+    </div>
+    
+    
+    <div class="text-center">
+        <button class="btn @*btn-primary*@" type="submit" style="background-color:deepskyblue">Save</button>
+        <a asp-action="Index" class="btn @*btn-secondary*@" style="background-color: #e83e8c">Cancel</a>
+    </div>
+</form>
